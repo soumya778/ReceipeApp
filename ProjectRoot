@@ -1,0 +1,49 @@
+//copy styles to app.css
+//make differnt components
+//setup import and export features of components
+//combine them all in app.js
+
+
+// #first we start working with the meals component
+// in this we have given the basic text
+
+//then we move to context api, in this we have used useContext,AppProvider methods to pass data to different componenets without using common props drilling method
+
+//we have mention the AppProvider method to index.jsx file also.
+//common prop drilling method is not much useful because if the most childest component wants data then we have to pass props from its parent component ,which in not of use.
+
+
+
+//so we use context.jsx file ,to easily flow the data between differnent component of website..
+
+// in context.jsx either we can use useContext,AppProvider fuction to pass some data( data in AppProvider is given in value Attribute) 
+//or we can use Global context method to pass the data
+
+//--------------------------Method to Fetch data--------------------------------------
+//first we took url from meals db
+//then we place it in context.jsx and applied state hooks(meals) to have the data
+//we fectch meals using axios to get the reqired content and set the content to meals
+//for loading purpose we set the hook(loading) so the by the time we get the data from db it will show loading on the screen
+
+//==============Meals Component-------------------
+//then we pass the meals,loading props to meals component ,and map for each single meal container
+
+//--------------Search component-----------------
+// we have our nv bar with search component (input box, search button ,surprise)
+//we have a hook(text) to manage text in input box
+//to add functinality to search button,  we have another hook(searchterm)
+//for setting the search term we pass the setsearchterm to search.jsx and there on form handlesubit we set the text provided in input box to setSearchterm
+//then this setSearchterm is used with the ur in fetchMeals function to fetch the data
+
+//for surprise button we pass random url to fetchMeals function
+//and on surprise button we have onclick event to invoke the event
+
+//-----------------Modal Component---------------------
+//for viewing each reciepe we setup a modal component
+//the page type view ,we have is because of css
+//then we have two hooks(showmodal,selectedmodal) in context.jsx to see the receipe
+//then we will setup a function select meaL we will find the meal whose id(passed  from Meals.jsx) matches the meal id then set the selected meal with that meal
+//and set showmadal to true
+//invoke the selectmeal function onclick on a image and pass the id of that meal to function as an argument in meals.jsx
+//then pass the selected meal to modal.jsx and destrure it to see the details
+//to close the modal component we have close button which onclick invoke closemodal function and in this we set up shomodal to false.
